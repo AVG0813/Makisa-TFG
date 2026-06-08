@@ -1,9 +1,14 @@
 :root{
-    --azul-principal:#042885;
-    --turquesa:#5CE1E6;
+    --vino:#7A004A;
+    --magenta:#D80A8C;
+     --salmon:#F28A7A;
+    --melocoton:#F0C06E;
+
+    --crema:#FAF7F2;
+    --arena:#F1ECE3;
+
+    --texto:#3B2F2F;
     --blanco:#FFFFFF;
-    --verde-salvia:#A8C3A0;
-    --beige-suave:#F8F6F2;
 }
 
 /* RESET */
@@ -18,12 +23,13 @@
 
 body{
     font-family:'Poppins', sans-serif;
-    background:#FAF8F4;
-    color:#333;
+    background:var(--crema);
+    color:var(--texto);
 }
 
 h1,h2,h3{
     font-family:'Cormorant Garamond', serif;
+     color:var(--vino);
 }
 
 a{
@@ -33,11 +39,13 @@ a{
 /* HEADER */
 
 header{
-    background-color:var(--azul-principal);
+    background:var(--vino);
     padding:20px;
     position:sticky;
     top:0;
     z-index:1000;
+
+    border-bottom:1px solid #ece4d8;
 }
 
 nav{
@@ -59,91 +67,199 @@ nav ul{
 }
 
 nav a{
-    color:white;
+       color:white;
+    font-weight:500;
     transition:.3s;
 }
 
 nav a:hover{
-    color:var(--turquesa);
+    color:var(--melocoton);
+}
+.decoracion-catalogo{
+    text-align:center;
+    margin:15px 0 25px;
 }
 
+.decoracion-catalogo img{
+    width:90px;
+    opacity:.18;
+}
 /* HERO */
 
 .hero{
-    height:80vh;
+    min-height:80vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
 
-    background:
-        linear-gradient(
-            rgba(4,40,133,.85),
-            rgba(4,40,133,.85)
-        ),
-        url('../img/fondo-botanico.jpg');
+      background:
+    linear-gradient(
+        135deg,
 
-    background-size:cover;
-    background-position:center;
+        rgba(240,192,110,.55),
 
-    color:white;
+        rgba(242,138,122,.40),
+
+        rgba(216,10,140,.25)
+    );
+
+    position:relative;
+    overflow:hidden;
 }
+.hero::before{
+    content:"";
 
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    left: 40px;
+    top:70px;
+
+    background-image:url("../img/passiflora-edulis-sims.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    opacity: 0.19;
+
+    pointer-events:none;
+}
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    right:-50px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background-image:url("../img/ruta-graveolens.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    opacity:0.19;
+
+    pointer-events:none;
+}
+.hero-content{
+    max-width:700px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
 .hero h1{
     font-size:5rem;
-    letter-spacing:3px;
-    margin-bottom:10px;
+    color:var(--vino);
+    margin-bottom:15px;
 }
 
 .hero h2{
-    color:var(--turquesa);
-    font-size:3rem;
-    margin-bottom:20px;
+    color:var(--magenta);
+    font-size:2.8rem;
+    margin-bottom:35px;
 }
 
 .hero p{
-    margin-bottom:30px;
+    color:var(--texto);
+    max-width:550px;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+    
+}
+.separador-botanico{
+    text-align:center;
+    padding:30px 0;
 }
 
+.separador-botanico img{
+    width:180px;
+    opacity:.25;
+}
 /* BOTONES */
 
 .btn{
     display:inline-block;
-    background:var(--turquesa);
-    color:var(--azul-principal);
+
+    background:var(--salmon);
+    color:white;
+
     padding:12px 25px;
+
     border-radius:30px;
-    font-weight:600;
+
+    transition:.3s;
+        margin-top:10px;
 }
 
-/* DECORACIÓN */
+.btn:hover{
+    background:var(--magenta); 
 
-.hoja{
-    position:absolute;
-    font-size:8rem;
-    opacity:.12;
 }
-
-.hoja-izquierda{
-    left:50px;
-    top:200px;
-}
-
-.hoja-derecha{
-    right:50px;
-    bottom:150px;
-}
+/*se puede invertir el orden de los colores para un efecto diferente*/
 
 /* CATEGORÍAS */
-
-.categorias{
-    padding:80px 20px;
-    background:var(--beige-suave);
+.card-info{
+    padding:20px;
 }
 
+.categoria-producto{
+    display:inline-block;
+
+    background:rgba(240,192,110,.2);
+
+    color:var(--vino);
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:.8rem;
+    font-weight:600;
+
+    margin-bottom:12px;
+}
+
+.precio{
+    color:var(--magenta);
+    font-weight:700;
+    font-size:1.1rem;
+}
+.categorias{
+    padding:80px 20px;
+     background:var(--arena);
+    position:relative;
+}
+
+.categorias::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    left:-50px;
+    top:50px;
+
+    background-image:url("../img/hoja1.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    opacity:.05;
+}
 .categorias h2{
     text-align:center;
-    color:var(--azul-principal);
+    color:var(--vino);
     margin-bottom:50px;
     font-size:2.5rem;
 }
@@ -183,7 +299,7 @@ nav a:hover{
 }
 
 .categoria-info h3{
-    color:var(--azul-principal);
+    color:var(--vino);
     margin-bottom:10px;
 }
 
@@ -201,7 +317,8 @@ nav a:hover{
 
 .destacados h2{
     text-align:center;
-    color:var(--azul-principal);
+    color:var(--vino);
+        font-size:2.5rem;
     margin-bottom:40px;
 }
 
@@ -216,14 +333,41 @@ nav a:hover{
 
 .card{
     background:white;
-    border-radius:20px;
+
+    border-radius:25px;
+
     overflow:hidden;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-
-    transition:.3s;
+    position:relative;
 }
 
+.card::before{
+    content:"";
+
+    display:block;
+
+    height:6px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #F0C06E,
+        #F28A7A,
+        #D80A8C
+    ); 
+}
+/ *por confirmar*/
+.separadores{
+    border-top:6px solid var(--magenta);
+}
+
+.stickers{
+    border-top:6px solid var(--salmon);
+}
+
+.ilustraciones{
+    border-top:6px solid var(--melocoton);
+}
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,0,0,.1);
@@ -237,7 +381,7 @@ nav a:hover{
 
 .card h3{
     padding:18px 20px 5px;
-    color:var(--azul-principal);
+    color:var(--vino);
     font-size:1.8rem;
 }
 
@@ -259,19 +403,19 @@ nav a:hover{
 
 .pagina-titulo h1{
     font-size:4rem;
-    color:var(--azul-principal);
+    color:var(--vino);
 }
 
 .pagina-titulo p{
-    color:#666;
+    color:var(--texto);
 }
 
 .linea-botanica{
-    width:80px;
-    height:3px;
-    background:var(--turquesa);
+    width:120px;
+    height:5px;
+    background:var(--salmon);
     margin:20px auto;
-    border-radius:10px;
+    border-radius:20px;
 }
 
 .filtros{
@@ -283,9 +427,16 @@ nav a:hover{
 }
 
 .filtros button{
-    background:white;
-    border:1px solid #d9d9d9;
-    border-radius:30px;
+       background:
+    linear-gradient(
+        135deg,
+        rgba(240,192,110,.15),
+        rgba(242,138,122,.15)
+    );
+
+    border:none;
+    color:var(--vino);
+       border-radius:30px;
     padding:12px 24px;
 
     font-family:'Poppins', sans-serif;
@@ -295,14 +446,19 @@ nav a:hover{
 }
 
 .filtros button:hover{
-    border-color:var(--turquesa);
+      border-color:var(--magenta);
     transform:translateY(-2px);
 }
 
 .filtro-activo{
-    background:var(--azul-principal);
+     background:
+    linear-gradient(
+        135deg,
+        #F0C06E,
+        #F28A7A
+    );
     color:white;
-    border-color:var(--azul-principal);
+    border-color:var(--magenta);
 }
 
 .productos-catalogo{
@@ -320,15 +476,37 @@ nav a:hover{
 .sobre-pagina{
     max-width:900px;
     margin:auto;
-    padding:20px 20px 80px;
+    padding:20px 20px 100px;
+
+    position:relative;
+}
+.sobre-pagina::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    right:-190px;
+    bottom:10px;
+
+    background-image:url("../img/passiflora-edulis-sims.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    opacity:.11;
+
+    pointer-events:none;
 }
 
 .sobre-bloque{
     margin-bottom:50px;
+    
 }
 
 .sobre-bloque h2{
-    color:var(--turquesa);
+    color:var(--magenta);
     margin-bottom:15px;
 }
 
@@ -349,7 +527,7 @@ nav a:hover{
 }
 
 .contacto-info h2{
-    color:var(--azul-principal);
+    color:var(--vino);
     margin-bottom:20px;
 }
 
@@ -377,7 +555,7 @@ nav a:hover{
 }
 
 .formulario button{
-    background:var(--azul-principal);
+    background:var(--vino);
     color:white;
     border:none;
     padding:15px;
@@ -404,12 +582,12 @@ nav a:hover{
 }
 
 .categoria{
-    color:var(--turquesa);
+    color:var(--magenta);
     font-weight:600;
 }
 
 .producto-info h1{
-    color:var(--azul-principal);
+    color:var(--vino);
     margin:15px 0;
 }
 
@@ -427,10 +605,16 @@ nav a:hover{
 /* FOOTER */
 
 footer{
-    background:var(--azul-principal);
-    color:white;
+    background:linear-gradient(
+        180deg,
+        #F7EBD8,
+        #F1ECE3
+    );
+
+    color:var(--texto);
+
     text-align:center;
-    padding:40px 20px;
+    padding:50px 20px;
 }
 
 .redes{
@@ -438,10 +622,12 @@ footer{
 }
 
 .redes a{
-    color:var(--turquesa);
-    margin:0 10px;
+    color:var(--vino);
 }
 
+.redes a:hover{
+    color:var(--magenta);
+}
 .copyright{
     margin-top:20px;
     font-size:.9rem;
