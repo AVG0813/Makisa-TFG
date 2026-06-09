@@ -77,12 +77,34 @@ nav a:hover{
 }
 .decoracion-catalogo{
     text-align:center;
-    margin:15px 0 25px;
+    margin:150px 0 25px;
 }
 
-.decoracion-catalogo img{
-    width:90px;
-    opacity:.18;
+.catalogo-decoracion{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.ilustracion-lateral{
+    position:absolute;
+    opacity:0.7;
+    filter:grayscale(100%);
+}
+
+.ilustracion-lateral.izquierda{
+    left:20px;
+    top:180px;
+
+    width:220px;
+}
+
+.ilustracion-lateral.derecha{
+    right:20px;
+    top:220px;
+
+    width:240px;
 }
 /* HERO */
 
@@ -119,7 +141,7 @@ nav a:hover{
     left: 40px;
     top:70px;
 
-    background-image:url("../img/passiflora-edulis-sims.png");
+    background-image:url("../img/ilustraciones/passiflora-edulis-sims.png");
     background-repeat:no-repeat;
     background-size:contain;
 
@@ -140,7 +162,7 @@ nav a:hover{
 
     transform:translateY(-50%);
 
-    background-image:url("../img/ruta-graveolens.png");
+    background-image:url("../img/ilustraciones/ruta-graveolens.png");
     background-repeat:no-repeat;
     background-size:contain;
 
@@ -187,23 +209,57 @@ nav a:hover{
 }
 /* BOTONES */
 
-.btn{
-    display:inline-block;
+.hero-botones{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
 
-    background:var(--salmon);
-    color:white;
+.btn,
+.btn-secundario{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
     padding:12px 25px;
 
+    min-height:48px;
+
     border-radius:30px;
 
+    font-size:1rem;
+    font-weight:500;
+
     transition:.3s;
-        margin-top:10px;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.btn{
+    background:var(--salmon);
+    color:white;
 }
 
 .btn:hover{
-    background:var(--magenta); 
+    background:var(--magenta);
+}
 
+/* BOTÓN SECUNDARIO */
+
+.btn-secundario{
+    background:transparent;
+
+    border:1.5px solid var(--vino);
+
+    color:var(--vino);
+}
+
+.btn-secundario:hover{
+    background:var(--vino);
+    color:white;
 }
 /*se puede invertir el orden de los colores para un efecto diferente*/
 
@@ -213,26 +269,33 @@ nav a:hover{
 }
 
 .categoria-producto{
+
     display:inline-block;
-
-    background:rgba(240,192,110,.2);
-
-    color:var(--vino);
 
     padding:6px 14px;
 
     border-radius:20px;
 
     font-size:.8rem;
+
     font-weight:600;
 
     margin-bottom:12px;
+
+    background:rgba(240,192,110,.20);
+
+    color:var(--vino);
 }
 
 .precio{
+
     color:var(--magenta);
+
     font-weight:700;
-    font-size:1.1rem;
+
+    margin-top:10px;
+
+    font-size:1.05rem;
 }
 .categorias{
     padding:80px 20px;
@@ -252,6 +315,7 @@ nav a:hover{
     top:50px;
 
     background-image:url("../img/hoja1.png");
+    */actualizar img/ */
     background-size:contain;
     background-repeat:no-repeat;
 
@@ -422,46 +486,58 @@ nav a:hover{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:12px;
-    margin:20px 0 50px;
+    gap:15px;
+    margin:30px 0 60px;
 }
 
 .filtros button{
-       background:
-    linear-gradient(
-        135deg,
-        rgba(240,192,110,.15),
-        rgba(242,138,122,.15)
-    );
+
+    background:white;
 
     border:none;
-    color:var(--vino);
-       border-radius:30px;
+
     padding:12px 24px;
 
+    border-radius:30px;
+
+    color:var(--vino);
+
     font-family:'Poppins', sans-serif;
+
+    font-size:.95rem;
+
     cursor:pointer;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
 
     transition:.3s;
 }
 
 .filtros button:hover{
-      border-color:var(--magenta);
-    transform:translateY(-2px);
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(
+        135deg,
+        rgba(240,192,110,.20),
+        rgba(242,138,122,.15)
+    );
 }
 
 .filtro-activo{
-     background:
-    linear-gradient(
+
+    background:linear-gradient(
         135deg,
-        #F0C06E,
-        #F28A7A
-    );
-    color:white;
-    border-color:var(--magenta);
+        var(--melocoton),
+        var(--salmon)
+    ) !important;
+
+    color:white !important;
 }
 
 .productos-catalogo{
+     position:relative;
+    z-index:2;
     max-width:1200px;
     margin:auto;
     padding:20px 20px 80px;
@@ -474,35 +550,47 @@ nav a:hover{
 /* SOBRE MÍ */
 
 .sobre-pagina{
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
-    padding:20px 20px 100px;
+
+    padding:40px 420px 120px 20px;
 
     position:relative;
 }
+
 .sobre-pagina::after{
     content:"";
 
     position:absolute;
 
-    width:300px;
-    height:300px;
+    width:380px;
+    height:600px;
 
-    right:-190px;
-    bottom:10px;
+    right:10px;
 
-    background-image:url("../img/passiflora-edulis-sims.png");
+    top:50%;
+    transform:translateY(-50%);
+
+    background-image:url("../img/ilustraciones/ximenia-americana.png");
     background-repeat:no-repeat;
     background-size:contain;
+    background-position:center;
 
-    opacity:.11;
+    opacity:10;
 
     pointer-events:none;
 }
 
 .sobre-bloque{
+    max-width:650px;
     margin-bottom:50px;
-    
+}
+
+.sobre-bloque p{
+    line-height:2;
+    margin-bottom:20px;
+
+    text-align:justify;
 }
 
 .sobre-bloque h2{
@@ -510,8 +598,19 @@ nav a:hover{
     margin-bottom:15px;
 }
 
-.sobre-bloque p{
-    line-height:1.8;
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+    .sobre-pagina{
+        padding:20px 20px 80px;
+    }
+
+    .sobre-pagina::after{
+        display:none;
+    }
+
 }
 
 /* CONTACTO */
@@ -665,5 +764,8 @@ footer{
 
     .pagina-titulo h1{
         font-size:3rem;
+    }
+    .catalogo-decoracion{
+        display:none;
     }
 }
