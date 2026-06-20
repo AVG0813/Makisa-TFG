@@ -75,36 +75,42 @@ nav a{
 nav a:hover{
     color:var(--melocoton);
 }
-.decoracion-catalogo{
-    text-align:center;
-    margin:150px 0 25px;
-}
-
 .catalogo-decoracion{
-    position:fixed;
+    position:absolute;
     inset:0;
+
     pointer-events:none;
     z-index:0;
 }
 
 .ilustracion-lateral{
     position:absolute;
-    opacity:0.7;
+
+    width:16vw;
+    max-width:260px;
+    min-width:140px;
+
+    height:auto;
+
+    opacity:.10;
     filter:grayscale(100%);
 }
 
 .ilustracion-lateral.izquierda{
-    left:20px;
-    top:180px;
-
-    width:220px;
+    left:2vw;
+    top:260px;
 }
 
 .ilustracion-lateral.derecha{
-    right:20px;
-    top:220px;
+    right:2vw;
+    top:600px;
+}
 
-    width:240px;
+.pagina-titulo,
+.filtros,
+.productos-catalogo{
+    position:relative;
+    z-index:2;
 }
 /* HERO */
 
@@ -135,29 +141,39 @@ nav a:hover{
 
     position:absolute;
 
-    width:600px;
-    height:600px;
+    width:20vw;
+    height:20vw;
 
-    left: 40px;
-    top:70px;
+    min-width:120px;
+    max-width:260px;
+
+    left:3vw;
+    top:50%;
+
+    transform:translateY(-50%);
 
     background-image:url("../img/ilustraciones/passiflora-edulis-sims.png");
     background-repeat:no-repeat;
     background-size:contain;
+    background-position:center;
 
-    opacity: 0.19;
+    opacity:.2;
 
     pointer-events:none;
 }
+
 .hero::after{
     content:"";
 
     position:absolute;
 
-    width:550px;
-    height:550px;
+    width:26vw;
+    height:26vw;
 
-    right:-50px;
+    min-width:180px;
+    max-width:420px;
+
+    right:2vw;
     top:50%;
 
     transform:translateY(-50%);
@@ -166,7 +182,7 @@ nav a:hover{
     background-repeat:no-repeat;
     background-size:contain;
 
-    opacity:0.19;
+    opacity: 0.2;
 
     pointer-events:none;
 }
@@ -576,7 +592,7 @@ nav a:hover{
     background-size:contain;
     background-position:center;
 
-    opacity:10;
+    opacity: 0.2;
 
     pointer-events:none;
 }
@@ -603,6 +619,16 @@ nav a:hover{
 
 @media (max-width:768px){
 
+    .hero::after{
+        display:none;
+    }
+
+    .hero::before{
+        opacity:.06;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
     .sobre-pagina{
         padding:20px 20px 80px;
     }
@@ -611,6 +637,20 @@ nav a:hover{
         display:none;
     }
 
+}
+@media (max-width:1100px){
+
+    .ilustracion-lateral{
+        opacity:.06;
+        width:150px;
+    }
+}
+
+@media (max-width:850px){
+
+    .ilustracion-lateral{
+        display:none;
+    }
 }
 
 /* CONTACTO */
@@ -704,6 +744,8 @@ nav a:hover{
 /* FOOTER */
 
 footer{
+    position:relative;
+
     background:linear-gradient(
         180deg,
         #F7EBD8,
@@ -713,19 +755,75 @@ footer{
     color:var(--texto);
 
     text-align:center;
+
     padding:50px 20px;
+
+    overflow:hidden;
+}
+
+footer::after{
+    content:"";
+
+    position:absolute;
+
+    width:18vw;
+    height:18vw;
+
+    min-width:140px;
+    max-width:260px;
+
+    right:2vw;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background-image:url("../img/ilustraciones/sarcomphalus-joazeiro.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+
+    opacity: 0.2;
+
+    pointer-events:none;
+}
+
+footer h3,
+footer p,
+footer .redes{
+    position:relative;
+    z-index:2;
 }
 
 .redes{
-    margin:20px 0;
+    margin:25px 0;
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
 }
 
 .redes a{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
     color:var(--vino);
+
+    font-weight:500;
+
+    transition:.3s;
 }
 
 .redes a:hover{
+
     color:var(--magenta);
+
+    transform:translateY(-2px);
+}
+
+.redes i{
+    font-size:1.2rem;
 }
 .copyright{
     margin-top:20px;
