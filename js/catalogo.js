@@ -1,13 +1,18 @@
 const botones = document.querySelectorAll(".filtros button");
-const productos = document.querySelectorAll(".card");
+const productos = document.querySelectorAll(
+    ".productos-catalogo .card-link"
+);
 
 botones.forEach(boton => {
 
     boton.addEventListener("click", () => {
 
-        document
-            .querySelector(".filtro-activo")
-            .classList.remove("filtro-activo");
+        const activo =
+            document.querySelector(".filtro-activo");
+
+        if (activo) {
+            activo.classList.remove("filtro-activo");
+        }
 
         boton.classList.add("filtro-activo");
 
@@ -15,9 +20,13 @@ botones.forEach(boton => {
 
         productos.forEach(producto => {
 
+            const categoria =
+                producto.querySelector(".card")
+                        .dataset.categoria;
+
             if (
                 filtro === "todos" ||
-                producto.dataset.categoria === filtro
+                categoria === filtro
             ) {
                 producto.style.display = "block";
             } else {
@@ -29,3 +38,17 @@ botones.forEach(boton => {
     });
 
 });
+
+const parametros = new URLSearchParams(window.location.search);
+const categoriaURL = parametros.get("categoria");
+
+if (categoriaURL) {
+
+    const boton = document.querySelector(
+        `[data-filtro="${categoriaURL}"]`
+    );
+
+    if (boton) {
+        boton.click();
+    }
+}

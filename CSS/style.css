@@ -142,20 +142,20 @@ nav a:hover{
     content:"";
     position:absolute;
 
-    width:clamp(120px,20vw,260px);
-    height:clamp(120px,20vw,260px);
+    width:290px;
+    height:290px;
 
-    left:20px;
-    top:40px;
+    left:50px;;
+    top:65px;
 
     background-image:url("../img/ilustraciones/passiflora-edulis-Sims.png");
     background-repeat:no-repeat;
     background-size:contain;
-    background-position:center;
+    background-position:left center;
 
-    opacity:.14;
+    opacity:.22;
+
     pointer-events:none;
-
     z-index:1;
 }
 
@@ -179,7 +179,7 @@ nav a:hover{
     background-repeat:no-repeat;
     background-size:contain;
 
-    opacity: 0.2;
+    opacity: 0.22;
 
     pointer-events:none;
 }
@@ -328,7 +328,7 @@ nav a:hover{
     top:50px;
 
     background-image:url("../img/hoja1.png");
-    */actualizar img/ */
+    /* actualizar img/ */
     background-size:contain;
     background-repeat:no-repeat;
 
@@ -384,21 +384,6 @@ nav a:hover{
     color:#666;
 }
 
-/* DESTACADOS */
-
-.destacados{
-    max-width:1200px;
-    margin:80px auto;
-    padding:20px;
-}
-
-.destacados h2{
-    text-align:center;
-    color:var(--vino);
-        font-size:2.5rem;
-    margin-bottom:40px;
-}
-
 /* TARJETAS */
 
 .productos{
@@ -433,7 +418,7 @@ nav a:hover{
         #D80A8C
     ); 
 }
-/ *por confirmar*/
+/*por confirmar*/
 .separadores{
     border-top:6px solid var(--magenta);
 }
@@ -600,7 +585,7 @@ nav a:hover{
     background-size:contain;
     background-position:center;
 
-    opacity: 0.2;
+    opacity: 0.22;
 
     pointer-events:none;
 }
@@ -645,7 +630,7 @@ nav a:hover{
         right:-25px;
         top:520px;
     }
-}
+
 
     .hero::before{
         opacity:.06;
@@ -864,7 +849,64 @@ footer .redes{
     margin-top:20px;
     font-size:.9rem;
 }
+/* PÁGINA DE PRODUCTO */
 
+.producto-detalle{
+    max-width:1200px;
+    margin:120px auto 80px;
+    padding:0 30px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+#producto-imagen{
+    width:100%;
+    max-width:500px;
+    aspect-ratio:1/1;
+
+    margin:auto;
+
+    object-fit:contain;
+
+    background:#F7F4EF;
+    border-radius:25px;
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.producto-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+#producto-categoria{
+    color:var(--salmon);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.9rem;
+}
+
+#producto-nombre{
+    font-size:3rem;
+    color:var(--vino);
+}
+
+#producto-precio{
+    font-size:2rem;
+    font-weight:600;
+    color:var(--magenta);
+}
+
+#producto-descripcion{
+    line-height:1.8;
+    color:var(--texto);
+}
 /* RESPONSIVE */
 
 @media (max-width:768px){
@@ -900,5 +942,21 @@ footer .redes{
     }
     .catalogo-decoracion{
         display:none;
+    }
+}
+@media (max-width:900px){
+
+    .producto-detalle{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+
+    #producto-nombre{
+        font-size:2.2rem;
+    }
+
+    #producto-imagen{
+        max-width:400px;
     }
 }
