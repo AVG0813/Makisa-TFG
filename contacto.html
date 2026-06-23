@@ -68,54 +68,33 @@
 
     </div>
 
-    <form
-        class="formulario"
-        name="contacto"
-        method="POST"
-        action="gracias.html"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-    >
+<form
+    class="formulario"
+    name="contacto"
+    method="POST"
+    action="/gracias.html"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+>
 
-        <input
-            type="hidden"
-            name="form-name"
-            value="contacto"
-        >
+    <input type="hidden" name="form-name" value="contacto">
 
-        <p hidden>
-            <label>
-                No rellenes esto:
-                <input name="bot-field">
-            </label>
-        </p>
+    <p hidden>
+        <label>
+            No rellenes esto:
+            <input name="bot-field">
+        </label>
+    </p>
 
-        <input
-            type="text"
-            name="nombre"
-            placeholder="Tu nombre"
-            required
-        >
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Tu correo electrónico"
-            required
-        >
+    <input type="email" name="email" placeholder="Tu correo electrónico" required>
 
-        <textarea
-            name="mensaje"
-            rows="6"
-            placeholder="Cuéntame en qué puedo ayudarte..."
-            required
-        ></textarea>
+    <textarea name="mensaje" rows="6" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea>
 
-        <button type="submit">
-            Enviar mensaje
-        </button>
+    <button type="submit">Enviar mensaje</button>
 
-    </form>
+</form>
 
 </section>
 
