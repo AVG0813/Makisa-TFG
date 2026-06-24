@@ -118,18 +118,20 @@ const productos = {
     }
 };
 
+// Obtener los parámetros de la URL
 const params = new URLSearchParams(window.location.search);
+
+// Recuperar el identificador del producto
 const id = params.get("id");
 
-if (id && productos[id]) {
+// Buscar el producto correspondiente
+const producto = productos[id];
 
-    const producto = productos[id];
+// Si el producto existe, cargar la información
+if (producto) {
 
     document.getElementById("producto-imagen").src =
         producto.imagen;
-
-    document.getElementById("producto-imagen").alt =
-        producto.nombre;
 
     document.getElementById("producto-nombre").textContent =
         producto.nombre;
@@ -142,8 +144,8 @@ if (id && productos[id]) {
 
     document.getElementById("producto-descripcion").textContent =
         producto.descripcion;
-
-} else {
+}
+ else {
 
     document.querySelector(".producto-detalle").innerHTML = `
         <div class="producto-no-encontrado">
