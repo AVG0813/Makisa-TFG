@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
+    <!-- Adaptación a dispositivos móviles (responsive design) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catálogo | Makisá</title>
-
+ <!-- FAVICON del proyecto (icono de pestaña del navegador) -->
+    <link rel="icon" href="img/favicon.png">
+<link rel="shortcut icon" href="img/favicon.jpeg">
+    <!-- Estilos principales del proyecto -->
     <link rel="stylesheet" href="CSS/style.css">
 
+    <!-- Iconos externos (Font Awesome) para redes sociales -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Tipografías externas (identidad visual del proyecto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+<!-- ================= HEADER / NAVEGACIÓN ================= -->
 <header>
     <nav>
+
+        <!-- Logo del proyecto -->
         <h1 class="logo">Makisá</h1>
 
+        <!-- Menú de navegación entre páginas -->
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="catalogo.html">Catálogo</a></li>
             <li><a href="sobre-mi.html">Sobre mí</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
     </nav>
 </header>
 
+<!-- ================= DECORACIÓN VISUAL ================= -->
+<!-- Elementos puramente estéticos para identidad de marca -->
 <div class="catalogo-decoracion">
 
     <img
@@ -46,10 +61,12 @@
 
 </div>
 
+<!-- ================= TÍTULO DE PÁGINA ================= -->
 <section class="pagina-titulo">
 
     <h1>Catálogo</h1>
 
+    <!-- Línea decorativa botánica -->
     <div class="linea-botanica"></div>
 
     <p>
@@ -58,280 +75,206 @@
 
 </section>
 
+<!-- ================= SISTEMA DE FILTROS ================= -->
+<!-- Permite filtrar productos por categoría sin recargar la página -->
 <div class="filtros">
 
-    <button class="filtro-activo"
-            data-filtro="todos">
+    <button class="filtro-activo" data-filtro="todos">
         Todos
     </button>
 
-    <button data-filtro="aretes">
-        Aretes
-    </button>
-
-    <button data-filtro="pulseras">
-        Pulseras
-    </button>
-
-    <button data-filtro="ilustraciones">
-        Ilustraciones
-    </button>
-
-    <button data-filtro="stickers">
-        Stickers
-    </button>
-
-    <button data-filtro="separadores">
-        Separadores
-    </button>
+    <button data-filtro="aretes">Aretes</button>
+    <button data-filtro="pulseras">Pulseras</button>
+    <button data-filtro="ilustraciones">Ilustraciones</button>
+    <button data-filtro="stickers">Stickers</button>
+    <button data-filtro="separadores">Separadores</button>
 
 </div>
 
+<!-- ================= CATÁLOGO DE PRODUCTOS ================= -->
 <section class="productos-catalogo">
 
- <a href="producto.html?id=topo-rosa-blanco" class="card-link">
-    <div class="card" data-categoria="aretes">
+    <!-- Cada producto es una tarjeta enlazable a su vista individual -->
 
-        <img src="img/productos/topo-rosa-blanco.jpeg"
-             alt="Aretes Flor Rosa">
+    <a href="producto.html?id=topo-rosa-blanco" class="card-link">
+        <div class="card" data-categoria="aretes">
+            <img src="img/productos/topo-rosa-blanco.jpeg" alt="Aretes Flor Rosa">
 
-        <div class="card-info">
-            <span class="categoria-producto">Aretes</span>
-            <h3>Flor Rosa</h3>
-            <p class="precio">$20.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Aretes</span>
+                <h3>Flor Rosa</h3>
+                <p class="precio">$20.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=flor-fucsia" class="card-link">
+        <div class="card" data-categoria="aretes">
+            <img src="img/productos/arete-flor-fucsia-1.jpeg" alt="Aretes Flor Fucsia">
 
-<a href="producto.html?id=flor-fucsia" class="card-link">
-    <div class="card" data-categoria="aretes">
-
-        <img src="img/productos/arete-flor-fucsia-1.jpeg"
-             alt="Aretes Flor Fucsia">
-
-        <div class="card-info">
-            <span class="categoria-producto">Aretes</span>
-            <h3>Flor Fucsia</h3>
-            <p class="precio">$35.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Aretes</span>
+                <h3>Flor Fucsia</h3>
+                <p class="precio">$35.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=pulsera-verde" class="card-link">
+        <div class="card" data-categoria="pulseras">
+            <img src="img/productos/pulsera-verde-1.jpeg" alt="Pulsera Verde">
 
-<a href="producto.html?id=pulsera-verde" class="card-link">
-    <div class="card" data-categoria="pulseras">
-
-        <img src="img/productos/pulsera-verde-1.jpeg"
-             alt="Pulsera Verde">
-
-        <div class="card-info">
-            <span class="categoria-producto">Pulseras</span>
-            <h3>Pulsera Verde</h3>
-            <p class="precio">$20.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Pulseras</span>
+                <h3>Pulsera Verde</h3>
+                <p class="precio">$20.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=arete-negro" class="card-link">
+        <div class="card" data-categoria="aretes">
+            <img src="img/productos/arete-negro.jpeg" alt="Aretes Negro">
 
-<a href="producto.html?id=arete-negro" class="card-link">
-    <div class="card" data-categoria="aretes">
-
-        <img src="img/productos/arete-negro.jpeg"
-             alt="Aretes Negro">
-
-        <div class="card-info">
-            <span class="categoria-producto">Aretes</span>
-            <h3>Aretes Negro</h3>
-            <p class="precio">$35.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Aretes</span>
+                <h3>Aretes Negro</h3>
+                <p class="precio">$35.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=topo-rojo-amarillo" class="card-link">
+        <div class="card" data-categoria="aretes">
+            <img src="img/productos/topo-rojo-amarillo.jpeg" alt="Topo Flor Roja">
 
-<a href="producto.html?id=topo-rojo-amarillo" class="card-link">
-    <div class="card" data-categoria="aretes">
-
-        <img src="img/productos/topo-rojo-amarillo.jpeg"
-             alt="Topo Flor Roja">
-
-        <div class="card-info">
-            <span class="categoria-producto">Aretes</span>
-            <h3>Topo Flor Roja</h3>
-            <p class="precio">$20.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Aretes</span>
+                <h3>Topo Flor Roja</h3>
+                <p class="precio">$20.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=arete-verde" class="card-link">
+        <div class="card" data-categoria="aretes">
+            <img src="img/productos/arete-verde.jpeg" alt="Aretes Verde">
 
-<a href="producto.html?id=arete-verde" class="card-link">
-    <div class="card" data-categoria="aretes">
-
-        <img src="img/productos/arete-verde.jpeg"
-             alt="Aretes Verde">
-
-        <div class="card-info">
-            <span class="categoria-producto">Aretes</span>
-            <h3>Aretes Verde</h3>
-            <p class="precio">$35.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Aretes</span>
+                <h3>Aretes Verde</h3>
+                <p class="precio">$35.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=pulsera-roja" class="card-link">
+        <div class="card" data-categoria="pulseras">
+            <img src="img/productos/pulsera-roja.jpeg" alt="Pulsera Roja">
 
-<a href="producto.html?id=pulsera-roja" class="card-link">
-    <div class="card" data-categoria="pulseras">
-
-        <img src="img/productos/pulsera-roja.jpeg"
-             alt="Pulsera Roja">
-
-        <div class="card-info">
-            <span class="categoria-producto">Pulseras</span>
-            <h3>Pulsera Roja</h3>
-            <p class="precio">$20.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Pulseras</span>
+                <h3>Pulsera Roja</h3>
+                <p class="precio">$20.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <!-- ================= STICKERS ================= -->
 
-<a href="producto.html?id=sticker-passiflora-edulis" class="card-link">
-    <div class="card" data-categoria="stickers">
+    <a href="producto.html?id=sticker-passiflora-edulis" class="card-link">
+        <div class="card" data-categoria="stickers">
+            <img src="img/productos/sticker-Passiflora-edulis.png" alt="Sticker Passiflora edulis">
 
-        <img src="img/productos/sticker-Passiflora-edulis.png"
-             alt="Sticker Passiflora edulis">
-
-        <div class="card-info">
-            <span class="categoria-producto">Stickers</span>
-            <h3>Passiflora edulis</h3>
-            <p class="precio">$3.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Stickers</span>
+                <h3>Passiflora edulis</h3>
+                <p class="precio">$3.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=sticker-tocoyena-formosa" class="card-link">
+        <div class="card" data-categoria="stickers">
+            <img src="img/productos/sticker-tocoyena-formosa.png" alt="Sticker Tocoyena formosa">
 
-<a href="producto.html?id=sticker-tocoyena-formosa" class="card-link">
-    <div class="card" data-categoria="stickers">
-
-        <img src="img/productos/sticker-tocoyena-formosa.png"
-             alt="Sticker Tocoyena formosa">
-
-        <div class="card-info">
-            <span class="categoria-producto">Stickers</span>
-            <h3>Tocoyena formosa</h3>
-            <p class="precio">$3.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Stickers</span>
+                <h3>Tocoyena formosa</h3>
+                <p class="precio">$3.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=sticker-ximenia-americana" class="card-link">
+        <div class="card" data-categoria="stickers">
+            <img src="img/productos/sticker-ximenia-americana.png" alt="Sticker Ximenia americana">
 
-<a href="producto.html?id=sticker-ximenia-americana" class="card-link">
-    <div class="card" data-categoria="stickers">
-
-        <img src="img/productos/sticker-ximenia-americana.png"
-             alt="Sticker Ximenia americana">
-
-        <div class="card-info">
-            <span class="categoria-producto">Stickers</span>
-            <h3>Ximenia americana</h3>
-            <p class="precio">$3.000 COP</p>
+            <div class="card-info">
+                <span class="categoria-producto">Stickers</span>
+                <h3>Ximenia americana</h3>
+                <p class="precio">$3.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=coleccion-botanica" class="card-link">
+        <div class="card" data-categoria="stickers">
+            <img src="img/productos/tira-completa-stickers.png" alt="Tira completa de stickers botánicos">
 
-<a href="producto.html?id=coleccion-botanica" class="card-link">
-    <div class="card" data-categoria="stickers">
-
-        <img src="img/productos/tira-completa-stickers.png"
-             alt="Tira completa de stickers botánicos">
-
-        <div class="card-info">
-            <span class="categoria-producto">Stickers</span>
-
-            <h3>Colección Botánica</h3>
-
-            <p class="nombre-comun">
-                Tira completa de stickers
-            </p>
-
-            <p class="precio">
-                $6.000 COP
-            </p>
+            <div class="card-info">
+                <span class="categoria-producto">Stickers</span>
+                <h3>Colección Botánica</h3>
+                <p class="nombre-comun">Tira completa de stickers</p>
+                <p class="precio">$6.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <!-- ================= SEPARADORES ================= -->
 
-<a href="producto.html?id=separador-info" class="card-link">
-    <div class="card" data-categoria="separadores">
+    <a href="producto.html?id=separador-info" class="card-link">
+        <div class="card" data-categoria="separadores">
+            <img src="img/productos/separador-info.png" alt="Separador Botánico Informativo">
 
-        <img src="img/productos/separador-info.png"
-             alt="Separador Botánico Informativo">
-
-        <div class="card-info">
-            <span class="categoria-producto">Separadores</span>
-
-            <h3>Separador Botánico</h3>
-
-            <p class="nombre-comun">
-                Edición informativa
-            </p>
-
-            <p class="precio">
-                $8.000 COP
-            </p>
+            <div class="card-info">
+                <span class="categoria-producto">Separadores</span>
+                <h3>Separador Botánico</h3>
+                <p class="nombre-comun">Edición informativa</p>
+                <p class="precio">$8.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=separador-1" class="card-link">
+        <div class="card" data-categoria="separadores">
+            <img src="img/productos/separador-1.png" alt="Separador Botánico I">
 
-<a href="producto.html?id=separador-1" class="card-link">
-    <div class="card" data-categoria="separadores">
-
-        <img src="img/productos/separador-1.png"
-             alt="Separador Botánico I">
-
-        <div class="card-info">
-            <span class="categoria-producto">Separadores</span>
-
-            <h3>Separador Botánico I</h3>
-
-            <p class="nombre-comun">
-                Ilustración botánica
-            </p>
-
-            <p class="precio">
-                $8.000 COP
-            </p>
+            <div class="card-info">
+                <span class="categoria-producto">Separadores</span>
+                <h3>Separador Botánico I</h3>
+                <p class="nombre-comun">Ilustración botánica</p>
+                <p class="precio">$8.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
+    <a href="producto.html?id=separador-2" class="card-link">
+        <div class="card" data-categoria="separadores">
+            <img src="img/productos/separador-2.png" alt="Separador Botánico II">
 
-<a href="producto.html?id=separador-2" class="card-link">
-    <div class="card" data-categoria="separadores">
-
-        <img src="img/productos/separador-2.png"
-             alt="Separador Botánico II">
-
-        <div class="card-info">
-            <span class="categoria-producto">Separadores</span>
-
-            <h3>Separador Botánico II</h3>
-
-            <p class="nombre-comun">
-                Ilustración botánica
-            </p>
-
-            <p class="precio">
-                $8.000 COP
-            </p>
+            <div class="card-info">
+                <span class="categoria-producto">Separadores</span>
+                <h3>Separador Botánico II</h3>
+                <p class="nombre-comun">Ilustración botánica</p>
+                <p class="precio">$8.000 COP</p>
+            </div>
         </div>
+    </a>
 
-    </div>
-</a>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
 
     <h3>Makisá</h3>
@@ -340,8 +283,7 @@
 
     <div class="redes">
 
-        <a href="https://instagram.com/makisahechoamano"
-           target="_blank"
+        <a href="https://instagram.com/makisahechoamano" target="_blank"
            aria-label="Instagram de Makisá">
 
             <i class="fa-brands fa-instagram"></i>
@@ -365,6 +307,9 @@
     </p>
 
 </footer>
+
+<!-- Lógica JavaScript del catálogo (filtros y URL params) -->
 <script src="js/catalogo.js"></script>
+
 </body>
 </html>

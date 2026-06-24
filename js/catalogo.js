@@ -1,54 +1,48 @@
+// Botones de filtro del catálogo
 const botones = document.querySelectorAll(".filtros button");
-const productos = document.querySelectorAll(
-    ".productos-catalogo .card-link"
-);
 
+// Productos del catálogo
+const productos = document.querySelectorAll(".productos-catalogo .card-link");
+
+// Evento para cada botón
 botones.forEach(boton => {
 
     boton.addEventListener("click", () => {
 
-        const activo =
-            document.querySelector(".filtro-activo");
+        // Quitar filtro activo anterior
+        const activo = document.querySelector(".filtro-activo");
+        if (activo) activo.classList.remove("filtro-activo");
 
-        if (activo) {
-            activo.classList.remove("filtro-activo");
-        }
-
+        // Activar botón actual
         boton.classList.add("filtro-activo");
 
-        const filtro = boton.dataset.filtro;
+        // Filtro seleccionado
+        const filtro = boton.dataset.filtro.toLowerCase();
 
+        // Filtrar productos
         productos.forEach(producto => {
 
-            const categoria =
-                producto.querySelector(".card")
-                        .dataset.categoria;
+            const card = producto.querySelector(".card");
+            const categoria = card ? card.dataset.categoria.toLowerCase() : "";
 
-            if (
-                filtro === "todos" ||
-                categoria === filtro
-            ) {
-                producto.style.display = "block";
+            if (filtro === "todos" || categoria === filtro) {
+                producto.style.display = ""; // deja que CSS decida
             } else {
                 producto.style.display = "none";
             }
-
         });
 
     });
 
 });
 
+// Filtro por URL (?categoria=aretes)
 const parametros = new URLSearchParams(window.location.search);
 const categoriaURL = parametros.get("categoria");
 
 if (categoriaURL) {
 
-    const boton = document.querySelector(
-        `[data-filtro="${categoriaURL}"]`
-    );
+    const boton = document.querySelector(`[data-filtro="${categoriaURL}"]`);
 
-    if (boton) {
-        boton.click();
-    }
+    if (boton) boton.click();
 }

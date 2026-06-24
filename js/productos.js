@@ -57,7 +57,7 @@ const productos = {
     "sticker-passiflora-edulis": {
         nombre: "Sticker Passiflora edulis",
         categoria: "Stickers",
-        precio: "$5.000 COP",
+        precio: "$3.000 COP",
         imagen: "img/productos/sticker-Passiflora-edulis.png",
         descripcion:
             "Ilustración botánica en formato sticker."
@@ -66,7 +66,7 @@ const productos = {
     "sticker-tocoyena-formosa": {
         nombre: "Sticker Tocoyena formosa",
         categoria: "Stickers",
-        precio: "$5.000 COP",
+        precio: "$3.000 COP",
         imagen: "img/productos/sticker-tocoyena-formosa.png",
         descripcion:
             "Sticker botánico inspirado en la naturaleza."
@@ -75,7 +75,7 @@ const productos = {
     "sticker-ximenia-americana": {
         nombre: "Sticker Ximenia americana",
         categoria: "Stickers",
-        precio: "$5.000 COP",
+        precio: "$3.000 COP",
         imagen: "img/productos/sticker-ximenia-americana.png",
         descripcion:
             "Sticker ilustrado y hecho con amor por los detalles."
@@ -84,10 +84,19 @@ const productos = {
     "sticker-coleccion-botanica": {
         nombre: "Colección Botánica",
         categoria: "Stickers",
-        precio: "$12.000 COP",
+        precio: "$6.000 COP",
         imagen: "img/productos/tira-completa-stickers.png",
         descripcion:
             "Colección completa de stickers botánicos."
+    },
+
+    "separador-info": {
+        nombre: "Separador Botánico",
+        categoria: "Separadores",
+        precio: "$8.000 COP",
+        imagen: "img/productos/separador-info.png",
+        descripcion:
+            "Edición informativa de la colección botánica."
     },
 
     "separador-1": {
@@ -106,27 +115,43 @@ const productos = {
         imagen: "img/productos/separador-2.png",
         descripcion:
             "Separador artesanal inspirado en la naturaleza."
-    },
-
-    "separador-info": {
-        nombre: "Separador Botánico",
-        categoria: "Separadores",
-        precio: "$8.000 COP",
-        imagen: "img/productos/separador-info.png",
-        descripcion:
-            "Edición informativa de la colección botánica."
     }
 };
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const producto = productos[id];
+if (id && productos[id]) {
 
-if (producto) {
-    document.getElementById("producto-imagen").src = producto.imagen;
-    document.getElementById("producto-nombre").textContent = producto.nombre;
-    document.getElementById("producto-categoria").textContent = producto.categoria;
-    document.getElementById("producto-precio").textContent = producto.precio;
-    document.getElementById("producto-descripcion").textContent = producto.descripcion;
+    const producto = productos[id];
+
+    document.getElementById("producto-imagen").src =
+        producto.imagen;
+
+    document.getElementById("producto-imagen").alt =
+        producto.nombre;
+
+    document.getElementById("producto-nombre").textContent =
+        producto.nombre;
+
+    document.getElementById("producto-categoria").textContent =
+        producto.categoria;
+
+    document.getElementById("producto-precio").textContent =
+        producto.precio;
+
+    document.getElementById("producto-descripcion").textContent =
+        producto.descripcion;
+
+} else {
+
+    document.querySelector(".producto-detalle").innerHTML = `
+        <div class="producto-no-encontrado">
+            <h2>Producto no encontrado</h2>
+            <p>El producto que buscas no existe.</p>
+            <a href="catalogo.html" class="btn">
+                Volver al catálogo
+            </a>
+        </div>
+    `;
 }

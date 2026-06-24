@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+    <!-- Librería de iconos utilizada en el footer y otros elementos -->
     <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Producto | Makisá</title>
 
+    <!-- Hoja de estilos principal de la aplicación -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Importación de tipografías desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
+<!-- Cabecera común presente en todas las páginas -->
 <header>
     <nav>
         <h1 class="logo">Makisá</h1>
@@ -28,8 +40,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </nav>
 </header>
 
+<!--
+    Plantilla reutilizable para mostrar el detalle de un producto.
+
+    Los datos mostrados en esta sección no están escritos
+    directamente en el HTML, sino que son insertados
+    dinámicamente mediante JavaScript a partir del
+    identificador recibido en la URL.
+-->
 <section class="producto-detalle">
 
+    <!-- Imagen principal del producto -->
     <img
         id="producto-imagen"
         src=""
@@ -38,19 +59,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     <div class="producto-info">
 
+        <!-- Categoría del producto -->
         <span id="producto-categoria"></span>
 
+        <!-- Nombre del producto -->
         <h1 id="producto-nombre"></h1>
 
+        <!-- Precio -->
         <p
             class="precio"
             id="producto-precio"
         ></p>
 
+        <!-- Descripción -->
         <p
             id="producto-descripcion"
         ></p>
 
+        <!-- Enlace al formulario de contacto -->
         <a
             href="contacto.html"
             class="btn"
@@ -62,6 +88,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </section>
 
+<!--
+    Archivo JavaScript encargado de:
+    1. Obtener el parámetro ?id= de la URL.
+    2. Buscar el producto correspondiente.
+    3. Cargar dinámicamente su información en esta página.
+-->
 <script src="js/productos.js"></script>
 
 <footer>

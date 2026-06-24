@@ -1,3 +1,4 @@
+/* Variables de color utilizadas en todo el sitio */
 :root{
     --vino:#7A004A;
     --magenta:#D80A8C;
@@ -115,7 +116,7 @@ nav a:hover{
     z-index:2;
 }
 /* HERO */
-
+/* Distribución principal mediante Flexbox */
 .hero{
     min-height:80vh;
 
@@ -538,7 +539,7 @@ nav a:hover{
 
     color:white !important;
 }
-
+/* Tarjetas del catálogo organizadas con CSS Grid */
 .productos-catalogo{
      position:relative;
     z-index:2;
@@ -609,7 +610,7 @@ nav a:hover{
 
 
 /* RESPONSIVE */
-
+/* Adaptación responsive para dispositivos móviles */
 @media (max-width:768px){
 
     .catalogo-decoracion{
@@ -631,7 +632,7 @@ nav a:hover{
         top:520px;
     }
 
-
+/* Pseudoelementos decorativos para ilustraciones botánicas */
     .hero::before{
         opacity:.06;
         left:50%;
@@ -720,45 +721,6 @@ nav a:hover{
     padding:15px;
     border-radius:10px;
     cursor:pointer;
-}
-
-/* PRODUCTO */
-
-.producto-detalle{
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.producto-imagen img{
-    width:100%;
-    border-radius:20px;
-}
-
-.categoria{
-    color:var(--magenta);
-    font-weight:600;
-}
-
-.producto-info h1{
-    color:var(--vino);
-    margin:15px 0;
-}
-
-.precio{
-    font-size:1.6rem;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.producto-info p{
-    line-height:1.8;
-    margin-bottom:25px;
 }
 
 /* FOOTER */

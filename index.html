@@ -1,138 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   
-   <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makisá | Hecho a mano</title>
 
+    <!-- Iconos de Font Awesome (CDN externo para iconografía social) -->
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <!-- Responsive design para adaptabilidad móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Makisá | Hecho a mano</title>
+ <!-- FAVICON del proyecto (icono de pestaña del navegador) -->
+    <link rel="icon" href="img/favicon.png">
+<link rel="shortcut icon" href="img/favicon.jpeg">
+    <!-- Hoja de estilos principal del proyecto -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (tipografías personalizadas para identidad visual) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Preconexión para optimización de carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Segunda familia tipográfica usada en títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+    <!-- CABECERA: navegación principal del sitio -->
     <header>
         <nav>
+
+            <!-- Logo textual del proyecto -->
             <h1 class="logo">Makisá</h1>
 
+            <!-- Menú de navegación estático entre páginas -->
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="sobre-mi.html">Sobre mí</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
+
         </nav>
     </header>
 
+    <!-- HERO: sección principal de presentación del proyecto -->
     <section class="hero">
         <div class="hero-content">
-    <h1>Makisá</h1>
 
-    <h2>Hecho a mano</h2>
+            <!-- Identidad del proyecto -->
+            <h1>Makisá</h1>
 
-    <p>Accesorios artesanales e ilustraciones botánicas inspiradas en la naturaleza.</p>
-    <div class="hero-botones">
+            <h2>Hecho a mano</h2>
 
-    <a href="catalogo.html" class="btn">
-    Descubrir colección
-</a>
+            <!-- Descripción del negocio -->
+            <p>
+                Accesorios artesanales e ilustraciones botánicas inspiradas en la naturaleza.
+            </p>
 
-<a href="sobre-mi.html" class="btn-secundario">
-    La historia de Makisá
-</a>
+            <!-- CTAs (llamadas a la acción) -->
+            <div class="hero-botones">
 
-</div>
-    </div>
+                <!-- Navegación a catálogo -->
+                <a href="catalogo.html" class="btn">
+                    Descubrir colección
+                </a>
+
+                <!-- Navegación a información del proyecto -->
+                <a href="sobre-mi.html" class="btn-secundario">
+                    La historia de Makisá
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEPARADOR VISUAL (elemento decorativo del diseño) -->
+    <section class="separador-botanico">
+        <img
+            src="img/ilustraciones/ximenia-americana.png"
+            alt="Ilustración botánica de Ximenia americana">
+    </section>
+
+    <!-- SECCIÓN DE CATEGORÍAS (navegación visual del catálogo) -->
+    <section class="categorias">
+
+        <h2>Categorías</h2>
+
+        <div class="categorias-grid">
+
+            <!-- CATEGORÍA: Separadores -->
+            <!-- Uso de query param para filtrado dinámico en catálogo -->
+            <a href="catalogo.html?categoria=separadores" class="categoria-card">
+                <img src="img/productos/separador-2.png" alt="Separadores">
+                <div class="categoria-info">
+                    <h3>Separadores</h3>
+                    <p>Inspirados en la naturaleza</p>
+                </div>
+            </a>
+
+            <!-- CATEGORÍA: Stickers -->
+            <a href="catalogo.html?categoria=stickers" class="categoria-card">
+                <img src="img/productos/sticker-1.png" alt="Stickers">
+                <div class="categoria-info">
+                    <h3>Stickers</h3>
+                    <p>Diseños botánicos originales</p>
+                </div>
+            </a>
+
+            <!-- CATEGORÍA: Ilustraciones -->
+            <a href="catalogo.html?categoria=ilustraciones" class="categoria-card">
+                <img src="img/ilustraciones/ximenia-americana.png" alt="Ilustraciones">
+                <div class="categoria-info">
+                    <h3>Ilustraciones</h3>
+                    <p>Arte inspirado en plantas</p>
+                </div>
+            </a>
+
+            <!-- CATEGORÍA: Aretes -->
+            <a href="catalogo.html?categoria=aretes" class="categoria-card">
+                <img src="img/productos/topo-rosa-blanco.jpeg" alt="Aretes">
+                <div class="categoria-info">
+                    <h3>Aretes</h3>
+                    <p>Creaciones hechas a mano</p>
+                </div>
+            </a>
+
+        </div>
 
     </section>
-   <section class="separador-botanico">
-    <img
-        src="img/ilustraciones/ximenia-americana.png"
-        alt="Ilustración botánica de Ximenia americana">
-</section>
-        <section class="categorias">
 
-    <h2>Categorías</h2>
+    <!-- FOOTER: información final y enlaces sociales -->
+    <footer>
 
-  <div class="categorias-grid">
+        <!-- Branding repetido -->
+        <h3>Makisá</h3>
 
-    <a href="catalogo.html?categoria=separadores" class="categoria-card">
-        <img src="img/productos/separador-2.png" alt="Separadores">
-        <div class="categoria-info">
-            <h3>Separadores</h3>
-            <p>Inspirados en la naturaleza</p>
+        <p>Hecho a mano</p>
+
+        <!-- Redes sociales externas -->
+        <div class="redes">
+
+            <!-- Instagram (abre en nueva pestaña) -->
+            <a href="https://instagram.com/makisahechoamano"
+               target="_blank"
+               aria-label="Instagram de Makisá">
+
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+
+            </a>
+
+            <!-- WhatsApp con enlace directo a conversación -->
+            <a href="https://wa.me/573108222286?text=Hola,%20me%20interesa%20un%20producto%20de%20Makisá"
+               target="_blank"
+               aria-label="WhatsApp de Makisá">
+
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp
+
+            </a>
+
         </div>
-    </a>
 
-    <a href="catalogo.html?categoria=stickers" class="categoria-card">
-        <img src="img/productos/sticker-1.png" alt="Stickers">
-        <div class="categoria-info">
-            <h3>Stickers</h3>
-            <p>Diseños botánicos originales</p>
-        </div>
-    </a>
+        <!-- Copyright del proyecto -->
+        <p class="copyright">
+            © 2025 Makisá · Todos los derechos reservados
+        </p>
 
-    <a href="catalogo.html?categoria=ilustraciones" class="categoria-card">
-        <img src="img/ilustraciones/ximenia-americana.png" alt="Ilustraciones">
-        <div class="categoria-info">
-            <h3>Ilustraciones</h3>
-            <p>Arte inspirado en plantas</p>
-        </div>
-    </a>
+    </footer>
 
-    <a href="catalogo.html?categoria=aretes" class="categoria-card">
-        <img src="img/productos/topo-rosa-blanco.jpeg" alt="Aretes">
-        <div class="categoria-info">
-            <h3>Aretes</h3>
-            <p>Creaciones hechas a mano</p>
-        </div>
-    </a>
-
-</div>
-
-</section>
-
-
-<footer>
-
-    <h3>Makisá</h3>
-
-    <p>Hecho a mano</p>
-
-    <div class="redes">
-
-        <a href="https://instagram.com/makisahechoamano"
-           target="_blank"
-           aria-label="Instagram de Makisá">
-
-            <i class="fa-brands fa-instagram"></i>
-            Instagram
-
-        </a>
-
-        <a href="https://wa.me/573108222286?text=Hola,%20me%20interesa%20un%20producto%20de%20Makisá"
-           target="_blank"
-           aria-label="WhatsApp de Makisá">
-
-            <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
-
-        </a>
-
-    </div>
-
-    <p class="copyright">
-        © 2025 Makisá · Todos los derechos reservados
-    </p>
-
-</footer>
-
+    <!-- Script principal del frontend (lógica JS del sitio) -->
     <script src="js/script.js"></script>
 
 </body>

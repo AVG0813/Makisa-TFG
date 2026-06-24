@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+    <!-- Librería de iconos utilizada en redes sociales -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contacto | Makisá</title>
-
+ <!-- FAVICON del proyecto (icono de pestaña del navegador) -->
+    <link rel="icon" href="img/favicon.png">
+<link rel="shortcut icon" href="img/favicon.jpeg">
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="CSS/style.css">
 
+    <!-- Fuentes tipográficas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
 
+<!-- Menú principal de navegación -->
 <header>
     <nav>
+
         <h1 class="logo">Makisá</h1>
 
         <ul>
@@ -31,16 +41,23 @@
             <li><a href="sobre-mi.html">Sobre mí</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
     </nav>
 </header>
 
+<!-- Encabezado de la página -->
 <section class="pagina-titulo">
+
     <h1>Contacto</h1>
+
     <p>¿Tienes alguna consulta?</p>
+
 </section>
 
+<!-- Sección principal de contacto -->
 <section class="contacto">
 
+    <!-- Información de contacto de la marca -->
     <div class="contacto-info">
 
         <h2>Hablemos</h2>
@@ -68,42 +85,57 @@
 
     </div>
 
-<form
-    class="formulario"
-    name="contacto"
-    method="POST"
-    action="/gracias.html"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
->
+    <!-- Formulario conectado al backend mediante JavaScript -->
+    <form class="formulario" id="contactoForm">
 
-    <input type="hidden" name="form-name" value="contacto">
+        <!-- Campo oculto para identificar el formulario -->
+        <input type="hidden" name="form-name" value="contacto">
 
-    <p hidden>
-        <label>
-            No rellenes esto:
-            <input name="bot-field">
-        </label>
-    </p>
+        <!-- Campo anti-spam -->
+        <p hidden>
+            <label>
+                No rellenes esto:
+                <input name="bot-field">
+            </label>
+        </p>
 
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <!-- Datos introducidos por el usuario -->
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Tu nombre"
+            required>
 
-    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <input
+            type="email"
+            name="email"
+            placeholder="Tu correo electrónico"
+            required>
 
-    <textarea name="mensaje" rows="6" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea>
+        <textarea
+            name="mensaje"
+            rows="6"
+            placeholder="Cuéntame en qué puedo ayudarte..."
+            required>
+        </textarea>
 
-    <button type="submit">Enviar mensaje</button>
+        <!-- Botón de envío -->
+        <button type="submit">
+            Enviar mensaje
+        </button>
 
-</form>
+    </form>
 
 </section>
 
+<!-- Pie de página -->
 <footer>
 
     <h3>Makisá</h3>
 
     <p>Hecho a mano</p>
 
+    <!-- Redes sociales -->
     <div class="redes">
 
         <a href="https://instagram.com/makisahechoamano"
@@ -126,11 +158,15 @@
 
     </div>
 
+    <!-- Derechos de autor -->
     <p class="copyright">
         © 2025 Makisá · Todos los derechos reservados
     </p>
 
 </footer>
+
+<!-- Script encargado de enviar los datos del formulario al servidor -->
+<script src="js/contacto.js"></script>
 
 </body>
 </html>
