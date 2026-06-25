@@ -1,4 +1,4 @@
-// Captura el evento de envío del formulario de contacto
+// Captura el evento submit del formulario de contacto
 document
   .getElementById("contactoForm")
   .addEventListener("submit", async (e) => {
@@ -13,7 +13,8 @@ document
 
     try {
 
-      // Envía los datos al backend mediante una petición HTTP POST
+      // Envía los datos al backend (servidor node.js) mediante una petición HTTP POST
+      //La función nativa fetch() en JavaScript permite realizar peticiones asíncronas a servidores de forma nativa
       const respuesta = await fetch(
         "http://localhost:3000/contacto",
         {
@@ -30,7 +31,8 @@ document
         }
       );
 
-      // Si el servidor responde correctamente, redirige a la página de agradecimiento
+      // Si la inserción en la base de datos se realiza correctamente,
+      // redirige al usuario a la página de confirmación
       if (respuesta.ok) {
         window.location.href = "gracias.html";
       } else {

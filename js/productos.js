@@ -1,3 +1,5 @@
+//diccionario clave-valor que contiene la información de los productos
+
 const productos = {
 
     "flor-fucsia": {
@@ -119,6 +121,8 @@ const productos = {
 };
 
 // Obtener los parámetros de la URL
+//Mediante URLSearchParams se recupera el identificador enviado desde el catálogo
+
 const params = new URLSearchParams(window.location.search);
 
 // Recuperar el identificador del producto

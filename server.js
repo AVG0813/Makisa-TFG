@@ -1,14 +1,18 @@
 // Importación de dependencias necesarias
 const express = require("express");
+//framework para Node.js que simplifica la creación de servidores web y APIs
 const cors = require("cors");
+// Permite que páginas alojadas en un origen distinto puedan comunicarse con el servidor
 const mysql = require("mysql2");
-
+//crea una instancia de Express
+//Se crea la aplicación principal que gestionará todas las peticiones HTTP recibidas por el servidor.
 const app = express();
 
 // Middleware para permitir peticiones externas y procesar JSON
 app.use(cors());
+// Permite que el frontend pueda comunicarse con el backend.
 app.use(express.json());
-
+//Convierte automáticamente el JSON recibido en un objeto JavaScript.
 /*
  * Configuración de la conexión con la base de datos MySQL
  */
@@ -40,6 +44,7 @@ conexion.connect((error) => {
 app.post("/contacto", (req, res) => {
 
     console.log("PETICION RECIBIDA");
+    // Express convierte el JSON temporal recibido a req.body gracias al middleware express.json()
     console.log(req.body);
 
     // Obtiene los datos enviados por el cliente
